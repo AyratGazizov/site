@@ -1,0 +1,7 @@
+G_INTERNET FAST API:
+
+add address-range name AR_0.0.0.1_9.255.255.255 ip-address-first 0.0.0.1 ip-address-last 9.255.255.255
+add address-range name AR_11.0.0.1_172.15.255.255 ip-address-first 11.0.0.1 ip-address-last 172.15.255.255
+add address-range name AR_172.32.0.1_192.167.255.255 ip-address-first 172.32.0.1 ip-address-last 192.167.255.255
+add address-range name AR_192.169.0.1_255.255.255.254 ip-address-first 192.169.0.1 ip-address-last 255.255.255.254
+add group name G_INTERNET members.1 AR_0.0.0.1_9.255.255.255 members.2 AR_11.0.0.1_172.15.255.255 members.3 AR_172.32.0.1_192.167.255.255 members.4 AR_192.169.0.1_255.255.255.254
