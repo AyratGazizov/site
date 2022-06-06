@@ -1,0 +1,9 @@
+<P>Добрый день,&nbsp;<SPAN id=user_name class="smartField user_name" contentEditable=false UNSELECTABLE="on">$user_name$</SPAN>, </P>
+<P>Вам предоставлен удобный и безопасный доступ к корпоративной почте и сервисам через защищенный мобильный клиент Capsule Workspace.</P>
+<P>&nbsp;</P>
+<P><STRONG>Скачайте приложение для устройств </STRONG><SPAN id=DownloadAppLINK class="smartField DownloadApp" contentEditable=true UNSELECTABLE="off"><A href="https://itunes.apple.com/app/mobile-enterprise/id522091441?mt=8">iPhone</A></SPAN> или <SPAN id=DownloadAppLINK class="smartField DownloadApp" contentEditable=true UNSELECTABLE="off"><A href="https://play.google.com/store/apps/details?id=com.CheckPoint.SSLVpn&amp;hl=ru&amp;gl=US">Android</A></SPAN>.</P>
+<P>&nbsp;</P>
+<P><STRONG>С помощью приложения отсканируйте QR код</STRONG>:&nbsp;</P>
+<DIV id=SiteAndCertificateMobileQR class="smartField SiteAndCertificateMobile" contentEditable=true style="HEIGHT: 150px; WIDTH: 150px" UNSELECTABLE="off"><IMG id=QRImgSiteAndCertificateMobile class=QRCodeField style="WIDTH: 100%" src="$qr_image_file$" UNSELECTABLE="on" XLink="cpsslvpn:///?host=$host$&amp;auth=Certificate&amp;regKey=$reg_key$$fingerprint$" XQRType="SiteAndCertificateMobile"></DIV>
+<P>&nbsp;</P>
+<P>Если Вы читаете это сообщение с мобильного устройства и не можете отсканировать QR код, то нажмите на&nbsp;ссылку:&nbsp;<SPAN id=SiteAndCertificateMobileLINK class="smartField SiteAndCertificateMobile" contentEditable=true UNSELECTABLE="off"><A href="cpsslvpn:///?host=$host$&amp;auth=Certificate&amp;regKey=$reg_key$$fingerprint$">link</A></SPAN>.</P>
