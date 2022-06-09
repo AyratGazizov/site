@@ -1,0 +1,85 @@
+(SCVObject
+	:SCVNames (
+		: (user_policy_scv
+			:type (plugin)
+			:parameters (				
+			)
+		)
+		: (ProcessMonitor
+			:type (plugin)
+			:parameters (
+                                :MsMpEng.exe (true)
+				:begin_admin (admin)
+					:send_log (alert)
+					:mismatchmessage ("Antivirus Nao se encontra Activo")
+				:end (admin)
+			)
+		)
+		: (RegMonitor
+			:type (plugin)
+			:parameters (
+				:begin_or (or1)
+					:string ("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\CurrentVersion=6.3")
+					:string ("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ReleaseId>=2020")
+				:end (or1)
+				:begin_admin (admin)
+					:send_log (alert)
+					:mismatchmessage ("Atualize o seu Windows.")
+				:end (admin)
+			)
+		)
+		: (SCVMonitor
+			:type (plugin)
+			:parameters (
+				:scv_version ("54014")
+				:begin_admin (admin)
+					:send_log (alert)
+					:mismatchmessage ("Please upgrade your Secure Configuration Verification products package.")
+				:end (admin)
+			)
+		)
+	)
+
+	:SCVEpsNames (
+		: (WindowsSecurityMonitor
+			:type (plugin)
+			:parameters (
+				:VirusProtectionRequired (true)
+				:VirusProtectionRequiredMismatchMessage ("Please verify that your virus protection is up to date and virus scanning is on.")
+				:VirusProtectionInstalledPrograms ("any")
+				:VirusProtectionInstalledProgramsMismatchMessage ("There is no anti-virus program installed on the machine.")
+				:WindowsUpdateRequired (true)
+				:WindowsUpdateRequiredMismatchMessage ("Please make sure that windows automatic updates is turned on")
+				:SpywareProtectionRequired (true)
+				:SpywareProtectionRequiredMismatchMessage ("Please verify that your spyware protection is turned on.")
+				:SpywareProtectionInstalledPrograms ("any")
+				:SpywareProtectionInstalledProgramsMismatchMessage ("There is no anti-spyware program installed on the machine.")
+				:NetworkFirewallRequired (true)
+				:NetworkFirewallRequiredMismatchMessage ("Please verify the your network firewall is turned on.")
+				:NetworkFirewallInstalledPrograms ("any")
+				:NetworkFirewallInstalledProgramsMismatchMessage ("There is no network firewall program installed on the machine.")
+			)
+		)
+	)
+	:SCVEpsPolicy (
+		: (WindowsSecurityMonitor)
+	)
+	:SCVPolicy (
+		: (RegMonitor)
+		: (SCVMonitor)
+	)
+	:SCVGlobalParams (
+		:enable_status_notifications (true)
+		:status_notifications_timeout (10)
+		:disconnect_when_not_verified (false)
+		:block_connections_on_unverified (false)
+		:scv_policy_timeout_hours (168)
+		:enforce_ip_forwarding (false)
+		:not_verified_script ("")
+		:not_verified_script_run_show (false)
+		:not_verified_script_run_admin (false)
+		:not_verified_script_run_always (false)
+		:allow_non_scv_clients (true)
+		:skip_firewall_enforcement_check (true)
+	)
+)
